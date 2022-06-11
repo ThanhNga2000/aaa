@@ -1,0 +1,74 @@
+﻿@model BaiDangConnection.LoaiHocBong
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/PhongDaoTao/Views/Shared/_Main_Admin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ffd800;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049; @*MÀU SUBMIT*@
+        }
+
+    div {
+        border-radius: 5px;
+        Color: #808080;
+        padding: 20px;
+    }
+    h3 {
+       margin: auto;
+      text-decoration-color: #DF013A;
+    }
+</style>
+<h3>Chỉnh sửa</h3>
+
+<div style="width:100%;margin:auto;">
+    @using (Html.BeginForm("Edit", "LoaiHocBongAD", FormMethod.Post, new { @styles = "Width:100%;" }))
+    {
+        <label for="idLHB">Mã Loại Học Bổng</label>
+        <input type="text" id="idLHB" name="idLHB" placeholder="Id.." required value="@Model.idLHB" readonly>// truyền vào giá trị
+
+        <label for="tenLHB">Tên Loại Học Bổng</label>
+        <input type="text" id="tenLHB" name="tenLHB" placeholder="Last name.." required value=" @Model.tenLHB">
+
+        <label for="GhiChu">Tình Trạng</label>
+        <select id="GhiChu" name="GhiChu" required>
+            @if (Model.GhiChu == "1")
+            {
+                <option value="1" selected>Đã khóa</option>
+                <option value="0">Chưa khóa</option>
+            }
+            else
+            {
+                <option value="1">Đã khóa</option>
+                <option value="0" selected>Chưa khóa</option>
+            }
+
+
+        </select>
+
+        <input type="submit" value="Xác nhận chỉnh sửa">
+    }
+
+</div>
+

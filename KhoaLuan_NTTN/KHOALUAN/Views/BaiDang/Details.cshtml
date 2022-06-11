@@ -1,0 +1,93 @@
+﻿@model BaiDangConnection.HocBong
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="category.html">Học Bổng</a></li>
+                    <li><a href="#">@Model.tenHB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div id="main-content" class="col-md-12">
+                <div class="product">
+                    <div class="col-md-6">
+                        <div class="image">
+                            <img src="~/Asset/images/@Model.HinhAnh" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="caption">
+                            <div class="name"><h3></h3></div>
+                            <h3>Thông tin học bổng</h3>
+                            <div class="info">
+                                <ul>
+                                    <li style="color: #000000">Điều kiện: @Model.DieuKien</li>
+                                    <li style="color: #000000">Thời gian đăng ký : @Model.ThoiGianDangKy</li>
+                                    <li style="color: #000000">Thời gian duyệt : @Model.ThoiGianDuyet</li>
+                                    <li style="color: #000000">Thời gian dự kiến phát học bổng : @Model.ThoiGianPhatHB</li>
+                                    <li style="color:#ff0000;text-align:center;font-weight: bold;">Hồ sơ gồm :</li>
+                                    <li style="color: #000000">1. Đơn xin học bổng viết tay</li>
+                                    <li style="color: #000000">2. Minh chứng có hoàn cảnh khó khăn</li>
+                                    <li style="color: #000000">3. Minh chứng tham gia các hoạt động</li>
+                                    <li style="color: #000000">4. Bảng điểm sinh viên</li>
+
+                                </ul>
+                               
+                                    <div style="text-align:center;font-weight:bold" class="buttons">
+                                        @Html.ActionLink("Nhấn Để Đăng Ký", "Create", "BaiDang")
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="product-desc">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#description">Chi tiết học bổng</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="description" class="tab-pane fade in active">
+                            <h4>@Model.tenHB</h4>
+                            <p style="color: #000000">@Model.MoTa</p>
+                        </div>
+                        <div id="review" class="tab-pane fade">
+                            <div class="review-text">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="review-form">
+                                <h4>Write a review</h4>
+                                <form name="form1" id="ff" method="post" action="review.php">
+                                    <label>
+                                        <span>Enter your name:</span>
+                                        <input type="text" name="name" id="name" required>
+                                    </label>
+                                    <label>
+                                        <span>Your message here:</span>
+                                        <textarea name="message" id="message"></textarea>
+                                    </label>
+                                    <div class="text-right">
+                                        <input class="btn btn-default" type="reset" name="reset" value="Reset">
+                                        <input class="btn btn-default" type="submit" name="Submit" value="Submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="sidebar" class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+

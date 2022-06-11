@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="http://www.365bootstrap.com">
+
+    <title>Trang Sinh Viên </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Asset/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Asset/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="~/Asset/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Asset/fonts/font-slider.css" type="text/css">
+
+    <!-- jQuery and Modernizr-->
+    <script src="~/Asset/js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="~/Asset/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+
+
+                </div>
+                <div class="col-xs-6">
+                    <ul class="top-link">
+                        <li> @Html.ActionLink("Tài Khoản", "Index", "Login")<span class="glyphicon glyphicon-user"></span></li>
+                        @*<li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="logo"><img style="width:150px;height:150px;" src="~/Asset/images/logo.png" /></div>
+            </div>
+            <div class="col-md-4">
+                <form class="form-search">
+                    <input style="height:50px;top:150px;" type="text" class="input-medium search-query">
+                    <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "BaiDang")</li>
+
+                    <li class="dropdown">
+                        @Html.ActionLink("Bài Đăng", "Index", "BaiDang")
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Loại Học Bổng</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="category.html">Học Bổng Khuyến hích</a></li>
+                                    <li><a href="category.html">Học Bổng Doanh Nghiệp</a></li>
+                                    <li><a href="category.html">Học Bổng thử thách UTE</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Liên hệ", "Index", "BaiDang")
+                    </li>
+                    <li><a href="category.html">Thông báo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--//////////////////////////////////////////////////-->
+    <!--///////////////////HomePage///////////////////////-->
+    <!--//////////////////////////////////////////////////-->
+    @RenderBody()
+    <footer>
+        <div class="container">
+            <div class="wrap-footer">
+                <div class="row">
+                    <div class="col-md-3 col-footer footer-1">
+                        <div class="heading"><h4>Đào tạo</h4></div>
+                        <a href="http://daotao.ute.udn.vn/curriculums.asp">Chương trình đào tạo</a>
+                    </div>
+                    <div class="col-md-6 col-footer footer-2">
+                        <div class="heading"><h4>Địa chỉ</h4></div>
+                        <p>C48 Cao Thắng - Hải Châu - Đà Nẵng. ĐT: (0511) 3822 571. FAX: (0511) 3894 884</p>
+                        <img style="width:400px;height:200px; vertical-align:middle;" src="~/Asset/images/location.png" />
+                    </div>
+
+                    <div class="col-md-3 col-footer footer-4">
+                        <div class="heading"><h4>Liên hệ</h4></div>
+                        <p> Liên hệ với Tổ quản trị Website</p>
+
+                        <ul>
+                            <li><span class="glyphicon glyphicon-home"></span>California, United States 3000009</li>
+                            <li><span class="glyphicon glyphicon-earphone"></span>+91 8866888111</li>
+                            <li><span class="glyphicon glyphicon-envelope"></span>infor@yoursite.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        Your Store © 20xx - <a href="http://www.365bootstrap.com" rel="nofollow" target="_blank">Ecommerce Themes</a> Designed by <a href="http://www.365bootstrap.com" rel="nofollow" target="_blank">365BOOTSTRAP</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <ul>
+                                <li><img src="~/Asset/images/visa-curved-32px.png" /></li>
+                                <li><img src="~/Asset/images/paypal-curved-32px.png" /></li>
+                                <li><img src="~/Asset/images/discover-curved-32px.png" /></li>
+                                <li><img src="~/Asset/images/maestro-curved-32px.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

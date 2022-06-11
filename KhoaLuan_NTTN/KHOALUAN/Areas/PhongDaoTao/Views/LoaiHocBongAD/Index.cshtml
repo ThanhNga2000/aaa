@@ -1,0 +1,73 @@
+﻿@model IEnumerable<BaiDangConnection.LoaiHocBong>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/PhongDaoTao/Views/Shared/_Main_Admin.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #5d5e63;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #2A9FD6;
+            color: white;
+        }
+        tr,th{
+            text-align: center;
+        }
+        th,td{
+            text-align: center;
+        }
+</style>
+<body>
+
+    <h1>Loại Học Bổng</h1>
+
+    <table id="customers">
+        <tr>
+            <th>Mã Loại Học Bổng</th>
+            <th>Tên Loại Học Bổng</th>
+            <th>Trạng Thái</th>
+            <th colspan="2">
+                <a href="@Url.Action("Create","LoaiHocBongAD")"><img style="width:50px;height:40px;margin-left:5%;" src="~/Areas/AssetAD/image/Create.png" /></a>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.idLHB</td>
+        <td>@item.tenLHB</td>
+        <td>@item.GhiChu</td>
+        <td>
+            <a href="@Url.Action("Edit","LoaiHocBongAD",new { id= @item.idLHB})"><img style="width:50px;height:40px;" src="~/Areas/AssetAD/image/edit.png" /></a>
+        </td>
+        <td>
+            <a href="@Url.Action("DeleteTamThoi","LoaiHocBongAD",new { id= @item.idLHB})"><img style="width:50px;height:40px;" src="~/Areas/AssetAD/image/delete.png" /></a>
+        </td>
+    </tr>
+        }
+
+    </table>
+
+</body>
+

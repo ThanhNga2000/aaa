@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/PhongDaoTao/Views/Shared/_Main_Admin.cshtml";
+}
+
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #35d3d8;
+        color: white;
+        padding: 14px 20px;
+        margin: auto;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #35d3d8;
+        }
+
+   
+</style>
+<body>
+
+    <h3>Thêm loại học bổng</h3>
+
+    <div style="margin:auto;width:50%;">
+        @using (Html.BeginForm("Create", "LoaiHocBongAD", FormMethod.Post, new { @styles = "Width:50%;" }))
+        {
+            <label for="idLHB">Mã Loại Học Bổng</label>
+        <input type="text" id="idLHB" name="idLHB" placeholder="Nhập mã loại học bổng.." required>
+
+        <label for="tenLHB">Tên Loại Học Bổng</label>
+        <input type="text" id="tenLHB" name="tenLHB" placeholder="Nhập tên loại học bổng.." required>
+
+        <label for="GhiChu">Ghi chú</label>
+        <input type="text" id="GhiChu" name="GhiChu" placeholder="Ghi chú...">
+
+        <input type="submit" value="Thêm mới">
+        }
+    </div>
+
+</body>
+

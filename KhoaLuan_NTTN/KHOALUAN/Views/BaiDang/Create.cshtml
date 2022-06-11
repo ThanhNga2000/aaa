@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+    label {
+        margin-left: 450px;
+    }
+    input {
+        margin-left: 450px;
+    }
+</style>
+<h6 style="color:#ff0000;text-align:center;font-weight: bold;">Hồ sơ gồm :</h6>
+    <form  action="action_page.php">
+        <div  class="container">
+            <label for="email"><b>Minh chứng 1 :</b></label>
+            <input style=" margin-left:450px;" type="file" id="myFile" name="filename">
+
+            <label style="margin-left: 450px;" for="psw"><b>Minh chứng 2 :</b></label>
+            <input type="file" id="myFile" name="filename">
+
+            <label style="margin-left: 450px;" for="psw-repeat"><b>Minh chứng 3 : </b></label>
+            <input type="file" id="myFile" name="filename">
+
+            <label style="margin-left: 450px;" for="psw-repeat"><b>Minh chứng 4 : </b></label>
+            <input type="file" id="myFile" name="filename">
+
+            <button style="margin-top: 80px; margin-left:45%; margin-bottom:10px" type="submit" class="registerbtn">Đăng Ký</button>
+        </div>
+    </form>

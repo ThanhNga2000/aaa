@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BaiDangConnection.HocBong>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/DoanhNghiep/Views/Shared/_Main_DN.cshtml";
+}
+<h2> Danh sách bài đăng</h2>
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #01DF01;
+        }
+
+        #customers tr:hover {
+            background-color: #01DFD7;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #DF013A;
+            color: white;
+        }
+</style>
+<table id="customers">
+    <tr>
+        <th>Mã Học Bổng</th>
+        <th>Loại Học Bổng</th>
+        <th>Tên Học Bổng</th>
+        <th>Điều Kiện</th>
+        <th>Thời gian đăng ký</th>
+        <th>Thời gian Phát Học Bổng</th>
+        <th>Thời gian Duyệt</th>
+        <th>Trạng Thái</th>
+        <th>Hình ảnh</th>
+        <th colspan="2">
+            <a href="@Url.Action("Create","DangBai")"> <img style="width:50px;height:40px;margin-left:5%;" src="~/Areas/AssetAD/image/Create.png" /></a>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.idHocBong</td>
+    <td>@item.idLHB</td>
+    <td>@item.tenHB</td>
+    <td>@item.DieuKien</td>
+    <td>@item.ThoiGianDangKy</td>
+    <td>@item.ThoiGianPhatHB</td>
+    <td>@item.ThoiGianDuyet</td>
+    <td>@item.TrangThai</td>
+    <td><img src="~/Asset/images/@item.HinhAnh" style="width:55px;height:62px" /></td>
+    <td>
+        <a href="@Url.Action("Edit","DangBai",new { id= @item.idHocBong})"><img style="width:50px;height:40px;" src="~/Areas/AssetAD/image/edit.png" /></a>
+    </td>
+    <td>
+        <a href="@Url.Action("DeleteTamThoi","DangBai",new { id= @item.idHocBong})"><img style="width:50px;height:40px;" src="~/Areas/AssetAD/image/delete.png" /></a>
+    </td>
+
+</tr>
+    }
+
+
+</table>
+

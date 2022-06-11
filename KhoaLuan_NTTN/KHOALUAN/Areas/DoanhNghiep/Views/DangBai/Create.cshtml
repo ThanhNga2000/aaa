@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/DoanhNghiep/Views/Shared/_Main_DN.cshtml";
+}
+<script src="~/Areas/AssetAD/js/Product/previewFile.js"></script>
+<style>
+    input[type=text], select {
+        background: #E0F8F7;
+    }
+
+    td {
+        color: #FE2EC8;
+    }
+
+    input[type=number] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+@using (Html.BeginForm("Create", "DangBai", FormMethod.Post, new { enctype = "mutipart/form-data" }))//load hình
+{
+<table style="width:70%;margin:auto;background:#F5DA81;">
+    <tr>
+        <td>Mã Học Bổng</td>
+        <td><input style="width: 300px;float :left;height:35px" maxlength="11" type="text" name="idHocBong" /></td>
+        <td rowspan="8">
+            <div>
+                <img id="target" class="img" src="#" alt="your image" style="float:right;width:320px;height:300px;" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Mã Loại Học Bổng</td>
+        <td>
+            @*tạo view bag ở trang sanphamAD*@
+            @*@Html.DropDownList("idLHB", null, new { @style = "float:left;width:300px;height:35px;" })*@
+            <input style="width:300px;float:left;height:35px" type="text" name="idLHB" maxlength="255" />
+        </td>
+    </tr>
+    <tr>
+        <td>Tên Học Bổng</td>
+        <td>
+            <input style="width:300px;float:left;height:35px" type="text" name="tenHB" maxlength="255" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Điều Kiện</td>
+        <td>
+            <input style="width:300px;float:left;height:35px" type="text" name="DieuKien" maxlength="255" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Thời gian đăng ký</td>
+        <td>
+            <input style="width:300px;float:left;height:35px" type="date" name="ThoiGianDangKy" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Thời gian phát Học Bổng</td>
+        <td>
+            <input style="width:300px;float:left;height:35px" type="date" name="ThoiGianPhatHB" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Trạng thái</td>
+        <td>
+            <input style="width:300px;float:left;height:35px" type="text" name="TrangThai" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Hình Ảnh</td>
+        <td>
+            <input type="File" id="file_Hinh" name="HinhAnh" onchange="previewFile();" style="float:left" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <input style="height:40px;width:300px;margin-left:32%;
+            background:#FE2EC8;color:#fff;border:1px solid #eee;border-radius:20px;box-shadow:5px 5px 5px #eee;"
+                   type="submit" name="btn_ThemQuanAo" value="Hoàn thất thêm sản phẩm" />
+        </td>
+    </tr>
+</table>
+}
